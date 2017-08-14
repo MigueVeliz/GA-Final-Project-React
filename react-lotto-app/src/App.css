@@ -1,0 +1,820 @@
+
+/*******************************************
+********************************************
+*********** L O G  I N  S T U F F **********
+********************************************
+*******************************************/
+
+.no-data {
+  color: white;
+}
+
+body, html{
+  /*background-color: #FAFAFA;*/
+}
+.App {
+  text-align: center;
+  /*background-color: #FAFAFA;*/
+
+}
+
+.auth-form, .content{
+  width: 60vw;
+  max-width: 600px;
+  margin: 0px auto;
+  /*padding-top: 10px;*/
+  padding: 30px;
+  background-color: #FFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  
+}
+
+.auth-form {
+  /*padding-top: 100px;*/
+  /*margin-top: 20px;*/
+}
+
+h2{
+  font-weight: 300;
+  font-size: 2em;
+  margin: 10px 0;
+}
+
+.auth-form form{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+label{
+  text-align: left;
+  margin: 16px 0 5px;
+
+}
+
+input{
+  padding: 8px 0;
+  border: 0px solid transparent;
+  border-bottom: 1px solid #333;
+  font-size: 1em;
+  outline: 0px solid transparent;
+}
+
+.form-buttons{
+  margin: 30px 0 16px;
+  text-align: right;
+
+}
+
+.form-button {
+  outline: 0px solid transparent;
+
+}
+
+button.form-button {
+  background-color: transparent;
+  color: teal;
+  font-size: 1.2em;
+  border: 2px solid transparent;
+  padding: 6px 0;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: all .5s ease;
+  /*outline: 0px solid transparent;*/
+}
+
+button:hover{
+  border-bottom: 2px solid #95E06C;
+}
+
+.loading{
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  background-color: #FFF;
+}
+
+
+
+.App {
+  /*text-align: center;*/
+  /*margin: 0;*/
+  /*background-color: #587291;*/
+  background-color: #2E4756;
+  /*height: 100vh;*/
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/*******************************************
+********************************************
+*********** N A V I G A T I O N ************
+********************************************
+*******************************************/
+
+.navigation {
+  height: 5vh;
+  width: 100vw;
+  /*background-color: #2F394D; */
+  background-color: #131112;
+  /*text-align: center;*/
+  /*display: block;*/
+}
+
+.title {
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 3px;
+  display: inline-block;
+}
+
+.logout-button {
+  background-color: #0A2342;
+  font-size: 11px;
+  position: absolute;
+  /*float: right;*/
+  /*top: 0;*/
+  right: 0;
+  /*margin-bottom: 10px;*/
+  display: inline-block;
+  height: 5vh;
+  width: 15%;
+  color: white;
+  border: transparent;
+}
+
+.home-button {
+  background-color: #0A2342;
+  font-size: 13px;
+  position: absolute;
+  /*float: right;*/
+  /*top: 0;*/
+  left: 0;
+  /*margin-bottom: 10px;*/
+  display: inline-block;
+  height: 5vh;
+  width: 15%;
+  color: white;
+  border: transparent;
+}
+
+.logout-button:hover {
+  background-color: #1D1A05;
+  color: white;
+}
+
+.welcome-container {
+  /*background-color: white;*/
+  width: 60%;
+  margin: 0 auto;
+  padding: 40px 1px 10px;
+  margin-bottom: 10px;
+  /*background-color: #000022;*/
+}
+
+.welcome-container p {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+/*******************************************
+********************************************
+*********** C O N T A I N E R  *************
+********************************************
+*******************************************/
+
+.main-container {
+  height: 100%;
+  /*margin-top: 30px;*/
+  /*padding-top: 50px;*/
+
+  /*background-color: #040F16;*/
+}
+
+
+.container {
+  /*margin-top: 30px;*/
+  /*background-color: #000022;*/
+}
+
+.box {
+  width: 40vw;
+  height: 20vh;
+  /*background-color: #2F97C1;*/
+  color: white;
+  display: inline-block;
+  margin: 10px 10px;
+}
+
+.take5 { background-color: #95E06C; }
+.numbers { background-color: #CA3C25; }
+.pick10 { background-color: #08A4BD; }
+.quick-draw { background-color: #FEB95F; }
+.win4 { background-color: #961D4E; }
+
+.game-type {
+  /*height: 100px;*/
+  line-height: 125px;
+  font-weight: bold;
+  /*white-space: nowrap;*/
+}
+
+.box:hover {
+  background-color: #077187;
+}
+
+.box p {
+  font-size: 20px;
+}
+
+
+/*******************************************
+********************************************
+***************** T A K 5 ******************
+********************************************
+*******************************************/
+
+.take-five {
+  width: 100vw;
+  /*height: 83vh;*/
+}
+
+.new-take-5-number-styles {
+  width: 7%;
+  background-color: #4C2C72;
+  padding: 6px;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 19px;
+  color: white;
+  margin: 4px;
+}
+
+.new-take-5-number-styles:hover {
+  background-color: #E8C547;
+  color: black;
+}
+
+.selected-number {
+  width: 7%;
+  padding: 6px;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 19px;
+  margin: 4px;
+  background-color: #E8C547;
+  color: black;
+}
+
+.take-5-number-styles {
+  width: 8%;
+  background-color: #4C2C72;
+  padding: 5px;
+  border-radius: 10%;
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+  margin: 1px 10px;
+}
+
+.list {
+  width: 80%;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+  /*margin: 10px;*/
+}
+
+.new-numbers {
+  width: 100vw;
+  background-color: #B6174B;
+  padding: 2px 0px;
+}
+
+.old-numbers {
+  width: 100vw;
+  /*background-color: #445E93;*/
+  padding: 3px 0px;
+}
+
+.submit-take-5 {
+  background-color: #274060;
+  padding: 4px;
+  font-size: 20px;
+  color: white;
+}
+
+.submit-take-5:hover {
+  background-color: #1B2845;
+}
+
+.previous-numbers-text {
+  font-size: 30px;
+  margin: 40px 0px;
+  color: #29335C;
+
+}
+
+.take-5-delete-button {
+  background-color: #F0C808;
+  padding: 5px;
+  font-size: 15px;
+  display: inline;
+  border-radius: 10%;
+}
+
+
+.go-home {
+  color: white;
+  background-color: #077187;
+  padding: 8px;
+  font-size: 20px;
+  display: inline-block;
+}
+
+/*******************************************
+********************************************
+************** N U M B E R S ***************
+********************************************
+*******************************************/
+
+.numbers-new-numbers {
+  width: 100vw;
+  background-color: #CA3C25;
+  padding: 2px 0px;
+}
+
+.first-digit-styles {
+  width: 6%;
+  background-color: #443742;
+  padding: 4px;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 17px;
+  color: white;
+  margin: 5px 2px;
+}
+
+.wager-type-styles{
+  width: 10%;
+  background-color: #474973;
+  padding: 9px 2px;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 13px;
+  color: white;
+  margin: 5px 3px;
+}
+
+.amount-per-wager-styles {
+  width: 6%;
+  background-color: #0D0C1D;
+  padding: 9px 2px;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 16px;
+  color: white;
+  margin: 10px 2px;
+}
+
+.draw-time-styles {
+  width: 8%;
+  background-color: #F0E100;
+  padding: 9px 2px;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 15px;
+  color: black;
+  margin: 10px 2px;
+}
+
+.number_of_tickets-styles {
+  width: 7%;
+  background-color: #FF7700;
+  padding: 9px 2px;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 17px;
+  color: black;
+  margin: 5px 5px;
+}
+
+.number-of-days-styles {
+  width: 7%;
+  background-color: #B19994;
+  padding: 9px 2px;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 17px;
+  color: black;
+  margin: 5px 5px;
+}
+
+.first-digit-styles:hover,
+.wager-type-styles:hover,
+.amount-per-wager-styles:hover,
+.draw-time-styles:hover,
+.number_of_tickets-styles:hover,
+.number-of-days-styles:hover {
+  background-color: #9CE37D;
+  color: black;
+}
+
+.selected-number-numbers {
+  width: 7%;
+  background-color: #47E5BC;
+  padding: 4px;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 17px;
+  color: black;
+  margin: 5px 2px;
+}
+
+.old-numbers-container {
+  width: 100vw;
+  /*height: 400px;*/
+  background-color: #445E93;
+  padding: 3px 0px;
+}
+
+.old-numbers-list {
+  width: 80%;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+  /*margin: 10px;*/
+}
+
+.numbers-old-number-styles {
+  width: 7%;
+  background-color: #1D7874;
+  padding: 4px;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 18px;
+  color: white;
+  margin: 1px 5px;
+}
+
+.wager_type { background-color: yellow; width: 12%; color: black; }
+.amount_per_wager { background-color: #29335C }
+.draw_time { background-color: #E4572E }
+.number_of_tickets { background-color: #F3A712 }
+.number_of_days { background-color: #071E22 }
+
+.numbers-delete-button {
+  background-color: #F0C808;
+  padding: 5px;
+  font-size: 15px;
+  display: inline;
+  border-radius: 10%;
+}
+
+/*******************************************
+********************************************
+*********** Q U I C K   D R A W ************
+********************************************
+*******************************************/
+
+.old-quick-draw-container {
+  width: 100vw;
+  /*height: 400px;*/
+  background-color: #2E2D4D;
+  padding: 3px 0px;
+
+}
+
+.new-quick-draw-numbers {
+  width: 100vw;
+  background-color: #011627;
+  padding: 2px 0px;
+}
+
+.quick-draw-styles {
+  width: 6%;
+  background-color: #17BEBB;
+  padding: 4px;
+  border-radius: 30%;
+  display: inline-block;
+  font-size: 17px;
+  color: white;
+  margin: 6px 2px;
+}
+
+.spots { background-color: #E71D36; }
+.q-draw-numbers { background-color: #A80874; }
+.how-much-per-draw { background-color: #0CA4A5; margin: 0px 13px;}
+.quick-draw-extra { background-color: #5EF38C; width: 8%; color: black; }
+.consecutive-draws { background-color: #691E06; }
+
+.spots:hover,
+.q-draw-numbers:hover,
+.how-much-per-draw:hover,
+.quick-draw-extra:hover,
+.consecutive-draws:hover {
+  background-color: #8AC926;
+}
+
+.old-quick-draw-list {
+  width: 80%;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+  /*margin: 10px;*/
+}
+
+.quick-draw-old-number-styles {
+  width: 7%;
+  background-color: #253D5B;
+  padding: 4px;
+  border-radius: 20%;
+  display: inline-block;
+  font-size: 16px;
+  color: white;
+  margin: 1px 2px;
+}
+
+.quick-draw-numbers {
+  width: 50%;
+  padding: 4px 0px;
+  font-size: 15px;
+  margin: 1px 1px;
+  border-radius: 10%;
+  background-color: #D05353;
+
+}
+
+.old-spots { background-color: #E71D36; }
+.old-numbers { background-color: #A80874; }
+.old-how-much-per-game { background-color: #0CA4A5; }
+.old-quick-draw-extra { background-color: #5EF38C; color: black; }
+.old-consecutive-number { background-color: #691E06; }
+
+
+.quick-draw-delete-button {
+  background-color: red;
+  color: black;
+  padding: 5px;
+  font-size: 15px;
+  display: inline;
+  border-radius: 10%;
+}
+
+.submit-quick-draw-button {
+  background-color: #0D2C54;
+  padding: 4px;
+  font-size: 20px;
+  color: white;
+}
+
+.submit-quick-draw-button:hover {
+  background-color: #1D201F;
+  color: yellow;
+}
+
+
+/*******************************************
+********************************************
+*************** P I C K  10 ****************
+********************************************
+*******************************************/
+
+.new-pick10-numbers-container {
+  width: 100vw;
+  background-color: #011627;
+  padding: 2px 0px;
+}
+
+.pick10-styles {
+  width: 7%;
+  background-color: #17BEBB;
+  padding: 4px;
+  border-radius: 30%;
+  display: inline-block;
+  font-size: 17px;
+  color: white;
+  margin: 6px 4px;
+}
+
+.pick10-numbers {
+  background-color: tomato;
+}
+.pick10-days {
+  width: 8%;
+  background-color: #23B5D3;
+  margin: 6px 3px;
+}
+
+.pick10-numbers:hover,
+.pick10-days:hover {
+  background-color: #D90368;
+}
+
+.pick10-active {
+  background-color: #D90368;
+}
+
+
+.old-pick10-container {
+  width: 100vw;
+  /*height: 400px;*/
+  background-color: #070600;
+  padding: 3px 0px;
+}
+
+.old-pick10-list {
+  width: 80%;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+  /*margin: 10px;*/
+}
+
+.pick10-old-number-styles {
+  width: 7%;
+  background-color: /*#253D5B*/;
+  padding: 4px;
+  border-radius: 20%;
+  display: inline-block;
+  font-size: 16px;
+  color: white;
+  margin: 1px 2px;
+}
+
+.old-pick10-numbers {
+  width: 80%;
+  padding: 4px 0px;
+  font-size: 20px;
+  margin: 1px 1px;
+  border-radius: 10%;
+  background-color: tomato;
+  color: white;
+}
+
+.old-days {
+  background-color: #23B5D3;
+  font-size: 22px;
+  margin-left: 12px;
+}
+
+.pick10-delete-button {
+  background-color: #D81E5B;
+  color: white;
+  padding: 5px;
+  font-size: 15px;
+  display: inline;
+  border-radius: 10%;
+}
+
+/*******************************************
+********************************************
+***************** W I N 4 ******************
+********************************************
+*******************************************/
+
+.new-win4-numbers-container {
+  width: 100vw;
+  background-color: #011627;
+  padding: 2px 0px;
+}
+
+.win4-styles {
+  width: 6%;
+  background-color: #17BEBB;
+  padding: 4px;
+  border-radius: 30%;
+  display: inline-block;
+  font-size: 17px;
+  color: white;
+  margin: 6px 2px;
+}
+
+.win4-first-digit { background-color: #D90368; }
+.win4-second-digit { background-color: #D90368; }
+.win4-third-digit { background-color: #D90368; }
+.win4-fourth-digit { background-color: #D90368; }
+.win4-wager-type { background-color: #41EAD4; font-size: 13px; color: black; width: 9%; }
+.win4-amount-per-wager { background-color: #2E294E; margin: 6px 1px; }
+.win4-draw-time { background-color: #FF9F1C; width: 9%; }
+.win4-number-of-tickets { background-color: #4C9F70; margin: 6px 5px; }
+.win4-number-of-days { background-color: #456990; margin: 6px 14px; }
+
+
+.win4-first-digit:hover,
+.win4-second-digit:hover,
+.win4-third-digit:hover,
+.win4-fourth-digit:hover,
+.win4-wager-type:hover,
+.win4-amount-per-wager:hover,
+.win4-draw-time:hover,
+.win4-number-of-tickets:hover,
+.win4-number-of-days:hover {
+  background-color: #F5F2B8;
+  color: black;
+}
+
+.win4-active {
+  background-color: #F5F2B8;
+  color: black;
+}
+
+
+/* Win 4 Old Number Styles */
+.old-win4-container {
+  width: 100vw;
+  /*height: 400px;*/
+  background-color: #070600;
+  padding: 3px 0px;
+}
+
+.old-win4-list {
+  width: 80%;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+  /*margin: 10px;*/
+}
+
+.win4-old-number-styles {
+  width: 7%;
+  background-color: /*#253D5B*/;
+  padding: 4px;
+  border-radius: 20%;
+  display: inline-block;
+  font-size: 18px;
+  color: white;
+  margin: 1px 2px;
+}
+
+.old-digits { background-color: #D90368; }
+.old-wager_type { background-color: #41EAD4; color: black; }
+.old-amount-per-wager { background-color: #2E294E; }
+.old-draw-time { background-color: #FF9F1C; width: 9%;}
+.old-number-of-tickets { background-color: #4C9F70; }
+.old-number-of-days { background-color: #456990; }
+
+.win4-delete-button {
+  background-color: #D62839;
+  color: white;
+  padding: 5px;
+  font-size: 15px;
+  display: inline;
+  border-radius: 10%;
+}
+
+/*******************************************
+********************************************
+*************** F O O T E R ****************
+********************************************
+*******************************************/
+
+.footer {
+  /*background-color: #2F394D;*/
+  background-color: #131112;
+  margin-top: 40px;
+  padding: 30px 0px;
+  /*position: relative;*/
+
+
+}
+
+.footer p {
+  color: white;
+  font-size: 12px;
+}
+
+
+
+
+
+
