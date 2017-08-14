@@ -29,6 +29,7 @@ class App extends Component {
       gameMode: 'HOME', // ******* Take 5 - First Game
       takeFive: [], // *********** Take 5 - First Game
       takeFiveNumbers: [], // **** Take 5 - First Game
+      take5LatestWinningNumbers: [],
       numbers: [], // ************ Numbers - Second Game
       numbersNewNumbers: [], // ** Numbers - Second Game
       quickDraw: [], // ********** Quick Draw - Third Game
@@ -166,6 +167,8 @@ class App extends Component {
         urlReact = { this.state.urlReact }
         user = { this.state.user }
         logout = { this.logout.bind(this) }
+        getTake5LatestWinningNumbers = { this.getTake5LatestWinningNumbers.bind(this) }
+        take5LatestWinningNumbers = { this.state.take5LatestWinningNumbers }
         getGameMode = { this.getGameMode.bind(this) }
         getTake5Data = { this.getTake5Data.bind(this) } 
         takeFiveData = { this.state.takeFive }
@@ -184,6 +187,8 @@ class App extends Component {
         numbersData = { this.state.numbers }
         getNewNumbers = { this.newNumbersNumbers.bind(this) }
         newNumbers = { this.state.numbersNewNumbers }
+        deleteNumbersNumbers = { this.deleteNumbersNumbers.bind(this) }
+
       />
     }
     else if (gameMode === "QuickDraw") {
@@ -196,6 +201,8 @@ class App extends Component {
         quickDrawData = { this.state.quickDraw }
         getNewQuickDrawNumbers = { this.newQuickDrawNumbers.bind(this) }
         newQuickDrawNumbers = { this.state.quickDrawNewNumbers }
+        deleteQuickDrawNumbers = { this.deleteQuickDrawNumbers.bind(this) }
+
       />
     }
     else if(gameMode === "Pick10") {
@@ -208,6 +215,8 @@ class App extends Component {
         pick10Data = { this.state.pick10 }
         getNewPick10Numbers = { this.newPick10Numbers.bind(this) }
         newPick10Numbers = { this.state.pick10NewNumbers }
+        deletePick10Numbers = { this.deletePick10Numbers.bind(this) }
+
       />
     }
     else if (gameMode === "Win4") {
@@ -225,9 +234,36 @@ class App extends Component {
     }
   }
 
+  deleteQuickDrawNumbers( id ) {
+    this.setState({
+      quickDraw: this.state.quickDraw.filter( number => number.id !== id)
+    })
+  }
+
+  deleteNumbersNumbers( id ) {
+    this.setState({
+      numbers: this.state.numbers.filter( number => number.id !== id)
+    })
+  }
+
   deleteWin4Numbers(id) {
     this.setState({
       win4: this.state.win4.filter( win4 => win4.id !== id)
+    })
+  }
+
+  deletePick10Numbers(id) {
+    this.setState({
+      pick10: this.state.pick10.filter( pick10 => pick10.id !== id)
+    })
+  }
+
+  getTake5LatestWinningNumbers( numbers ) {
+
+    console.log( numbers )
+
+    this.setState({ 
+      take5LatestWinningNumbers: {...numbers}
     })
   }
 

@@ -55,6 +55,8 @@ class Pick10 extends Component {
 
 		console.log("deleting numbers widh ID:" + id ) 
 
+		this.props.deletePick10Numbers(id)
+
 	    fetch( this.props.urlReact + "/pick10/" + id, {
 	        method: 'DELETE',
 	        mode: 'CORS',
@@ -157,7 +159,7 @@ class Pick10 extends Component {
 
 		let user_id =  this.props.user.id
 
-		fetch( this.props.urlReact + "/pick10/" + user_id, {
+		fetch( this.props.urlReact + "/pick10", {
 			method: 'POST',
 			headers: {
 				'Accept': 'application/json',

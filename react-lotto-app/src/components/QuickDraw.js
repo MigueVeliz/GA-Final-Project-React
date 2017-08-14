@@ -57,6 +57,8 @@ class QuickDraw extends Component {
 
 		console.log("deleting numbers widh ID:" + id ) 
 
+		this.props.deleteQuickDrawNumbers(id)
+
 	    fetch( this.props.urlReact + "/quick_draw/" + id, {
 	        method: 'DELETE',
 	        mode: 'CORS',
@@ -212,7 +214,7 @@ class QuickDraw extends Component {
 
 		let user_id =  this.props.user.id
 
-		fetch( this.props.urlReact + "/quick_draw/" + user_id, {
+		fetch( this.props.urlReact + "/quick_draw", {
 			method: 'POST',
 			headers: {
 				'Accept': 'application/json',

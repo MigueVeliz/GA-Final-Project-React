@@ -1,9 +1,26 @@
 import React, { Component } from 'react'
-
+// appToken = cQbEkDeWdMcqRnK5O2Hmh5fFI
 import GoHome from './GoHome'
 import Navigation from './Navigation'
+// import Take5LatestWinningNumbers from './Take5LatestWinningNumbers'
 
 class TakeFive extends Component {
+
+	getLatestWinningNumbers() {
+		
+		fetch( "https://data.ny.gov/resource/hh4x-xmbw.json?draw_date=2017-08-13")
+		.then((response) => {
+			return response.json()
+		})
+		.then((responseJson) => {
+			console.log(responseJson[0].draw_date)
+			console.log(responseJson[0].winning_numbers)
+
+			this.props.getTake5LatestWinningNumbers(responseJson[0]);
+		})
+
+	}
+
 
 	/*game information is loaded when
 	this component is mounted*/
@@ -20,6 +37,9 @@ class TakeFive extends Component {
 
 			this.props.getTake5Data(responseJson);
 		})
+
+		this.getLatestWinningNumbers()
+
 	}//end of componentDidMount
 
 	// Old Take 5 numbers are rendered in the page
@@ -147,6 +167,23 @@ class TakeFive extends Component {
 
 	}//end of deleteNumbers
 
+	showWinningNumbers() {
+		let draw_date = this.props.take5LatestWinningNumbers.draw_date
+
+		console.log( draw_date ) 
+		//draw_date = draw_date.slice(0, draw_date.lastIndexOf("T"))
+
+		return (
+			<div className = "take5-winning-numbers">
+				<h2>Latest Winning Numbers: </h2>
+				<p> { this.props.take5LatestWinningNumbers.winning_numbers } </p>
+				<p> { draw_date } </p>
+
+			</div>
+		)
+
+	}
+
 
 	render() {
 
@@ -154,7 +191,8 @@ class TakeFive extends Component {
 			<div className = "take-five">
           		<Navigation getGameMode = { this.props.getGameMode } logout = { this.props.logout } user = { this.props.user }/>
 
-				<GoHome getGameMode = { this.props.getGameMode } />
+
+				{ this.showWinningNumbers() }
 
 				<div className = "new-numbers">
 					{ this.chooseNewNumbers()}

@@ -58,7 +58,10 @@ class Numbers extends Component {
 	by the user*/
 	deleteNumbers(id) {
 
-		console.log("deleting numbers widh ID:" + id ) 
+		console.log("deleting numbers widh ID:" + id )
+
+		this.props.deleteNumbersNumbers(id)
+
 
 	    fetch( this.props.urlReact + "/numbers/" + id, {
 	        method: 'DELETE',
