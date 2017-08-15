@@ -86,7 +86,7 @@ class QuickDraw extends Component {
 		container.push(data.spots.map((el, index) => {
 			return (
 				<li
-					className = "quick-draw-styles spots"
+					className = {  this.active( this.props.newQuickDrawNumbers[0], el) ? "win4-styles win4-first-digit win4-active" : "quick-draw-styles spots" }
 					key = { index }
 				 	onClick = { this.props.getNewQuickDrawNumbers.bind(el) }
 				> { el } </li>
@@ -97,7 +97,7 @@ class QuickDraw extends Component {
 		container.push(data.numbers.map((el, index) => {
 			return (
 				<li
-					className = "quick-draw-styles q-draw-numbers"
+					className = {  this.active( this.props.newQuickDrawNumbers[2], el) ? "win4-styles win4-first-digit win4-active" :  "quick-draw-styles q-draw-numbers" }
 					key = { index }
 				 	onClick = { this.props.getNewQuickDrawNumbers.bind(el) }
 				> { el } </li>
@@ -108,7 +108,7 @@ class QuickDraw extends Component {
 		container.push(data.howMuchPerDraw.map((el, index) => {
 			return (
 				<li
-					className = "quick-draw-styles how-much-per-draw"
+					className = {  this.active( this.props.newQuickDrawNumbers[3], el) ? "win4-styles win4-first-digit win4-active" :  "quick-draw-styles how-much-per-draw" }
 					key = { index }
 				 	onClick = { this.props.getNewQuickDrawNumbers.bind(el) }
 				> { el } </li>
@@ -119,7 +119,7 @@ class QuickDraw extends Component {
 		container.push(data.quickDrawExtra.map((el, index) => {
 			return (
 				<li
-					className = "quick-draw-styles quick-draw-extra"
+					className = {  this.active( this.props.newQuickDrawNumbers[4], el) ? "win4-styles win4-first-digit win4-active" :  "quick-draw-styles quick-draw-extra" }
 					key = { index }
 				 	onClick = { this.props.getNewQuickDrawNumbers.bind(el) }
 				> { el } </li>
@@ -130,7 +130,7 @@ class QuickDraw extends Component {
 		container.push(data.consecutiveDraws.map((el, index) => {
 			return (
 				<li
-					className = "quick-draw-styles consecutive-draws"
+					className = {  this.active( this.props.newQuickDrawNumbers[5], el) ? "win4-styles win4-first-digit win4-active" :  "quick-draw-styles consecutive-draws" }
 					key = { index }
 				 	onClick = { this.props.getNewQuickDrawNumbers.bind(el) }
 				> { el } </li>
@@ -141,6 +141,13 @@ class QuickDraw extends Component {
 		return container;
 
 	}// end of choooseNewQuickDrawNumbers
+
+
+	active( arr, el ) {	
+		let arr2 = []
+		arr2.push(arr)
+		return arr2.includes( el )
+	}
 
 
 	/*Button that appears when the user has selected 5

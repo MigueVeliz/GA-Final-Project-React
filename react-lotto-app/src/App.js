@@ -174,7 +174,9 @@ class App extends Component {
         takeFiveData = { this.state.takeFive }
         newNumber = { this.newNumber.bind(this) }
         numbers = { this.state.takeFiveNumbers }
-        resetTake5NewNumbersArr = { () => { this.resetTake5NewNumbersArr()} }
+        // resetTake5NewNumbersArr = { () => { this.resetTake5NewNumbersArr() } }
+        deleteTake5Numbers = { this.deleteTake5Numbers.bind(this) }
+        updateOldTake5Numbers = {  this.updateOldTake5Numbers.bind(this)  }
       />
     }
     else if(gameMode === "Numbers") {
@@ -232,6 +234,50 @@ class App extends Component {
         deleteWin4Numbers = { this.deleteWin4Numbers.bind(this) }
       />
     }
+  }
+
+  updateOldTake5Numbers( id ) {
+
+    id = parseInt(id.match(/\d+/)[0])
+
+    console.log("Return ID: " + typeof id )
+
+    let currentNumbers = this.state.takeFive
+
+    //console.log("Current takeFive Arr: " + this.state.takeFive[0].id )
+
+    let newNumbers = this.state.takeFiveNumbers
+
+    console.log("Current takeFiveNumbers Arr: " + this.state.takeFiveNumbers.length )
+
+
+    let arr = {
+        user_id: id,
+        first_number: newNumbers[0],
+        second_number: newNumbers[1],
+        third_number: newNumbers[2],
+        fourth_number: newNumbers[3],
+        fifth_number: newNumbers[4],
+    }
+
+    currentNumbers.push( arr )
+
+    console.log("Pushed Arra: " + currentNumbers[0])
+
+    currentNumbers.reverse()
+
+    this.setState({ 
+      takeFive: currentNumbers
+    })
+
+    this.resetTake5NewNumbersArr()
+
+  }
+
+  deleteTake5Numbers( id ) {
+    this.setState({
+      takeFive: this.state.takeFive.filter( number => number.id !== id)
+    })
   }
 
   deleteQuickDrawNumbers( id ) {

@@ -87,7 +87,7 @@ class Numbers extends Component {
 		container.push(first_digit.map((el, index) => {
 			return (
 				<li
-					className = { this.active(el) ? "selected-number-numbers" : "first-digit-styles"}
+					className = { this.active( this.props.newNumbers[0], el) ? "selected-number-numbers" : "first-digit-styles"}
 					key = { index }
 				 	onClick = { this.props.getNewNumbers.bind(el) }
 				> { el } </li>
@@ -98,7 +98,7 @@ class Numbers extends Component {
 		container.push(second_digit.map((el, index) => {
 			return (
 				<li
-					className = { this.active(el) ? "selected-number-numbers" : "first-digit-styles"}
+					className = { this.active( this.props.newNumbers[1], el) ? "selected-number-numbers" : "first-digit-styles"}
 					key = { index }
 				 	onClick = { this.props.getNewNumbers.bind(el) }
 				> { el } </li>
@@ -109,7 +109,7 @@ class Numbers extends Component {
 		container.push(third_digit.map((el, index) => {
 			return (
 				<li
-					className = { this.active(el) ? "selected-number-numbers" : "first-digit-styles"}
+					className = { this.active( this.props.newNumbers[2], el) ? "selected-number-numbers" : "first-digit-styles"}
 					key = { index }
 				 	onClick = { this.props.getNewNumbers.bind(el) }
 				> { el } </li>
@@ -120,7 +120,7 @@ class Numbers extends Component {
 		container.push(wager_type.map((el, index) => {
 			return (
 				<li
-					className = "wager-type-styles"
+					className = { this.active( this.props.newNumbers[3], el) ? "selected-number-numbers" : "wager-type-styles" }
 					key = { index }
 				 	onClick = { this.props.getNewNumbers.bind(el) }
 				> { el } </li>
@@ -131,7 +131,7 @@ class Numbers extends Component {
 		container.push(amount_per_wager.map((el, index) => {
 			return (
 				<li
-					className = "amount-per-wager-styles"
+					className = { this.active( this.props.newNumbers[4], el) ? "selected-number-numbers" : "amount-per-wager-styles" }
 					key = { index }
 				 	onClick = { this.props.getNewNumbers.bind(el) }
 				> { el } </li>
@@ -142,7 +142,7 @@ class Numbers extends Component {
 		container.push(draw_time.map((el, index) => {
 			return (
 				<li
-					className = "draw-time-styles"
+					className = { this.active( this.props.newNumbers[5], el) ? "selected-number-numbers" : "draw-time-styles" }
 					key = { index }
 				 	onClick = { this.props.getNewNumbers.bind(el) }
 				> { el } </li>
@@ -153,7 +153,7 @@ class Numbers extends Component {
 		container.push(number_of_tickets.map((el, index) => {
 			return (
 				<li
-					className = "number_of_tickets-styles"
+					className = { this.active( this.props.newNumbers[6], el) ? "selected-number-numbers" : "number_of_tickets-styles" }
 					key = { index }
 				 	onClick = { this.props.getNewNumbers.bind(el) }
 				> { el } </li>
@@ -164,7 +164,7 @@ class Numbers extends Component {
 		container.push(number_of_days.map((el, index) => {
 			return (
 				<li
-					className = "number-of-days-styles"
+					className = { this.active( this.props.newNumbers[7], el) ? "selected-number-numbers" : "number-of-days-styles" }
 					key = { index }
 				 	onClick = { this.props.getNewNumbers.bind(el) }
 				> { el } </li>
@@ -178,8 +178,14 @@ class Numbers extends Component {
 
 	// Return true or false if element is in the 
 	// this.state.props.numbers
-	active( element ) {	
+/*	active( element ) {	
 		return this.props.newNumbers.includes( element )
+	}*/
+
+	active( arr, el ) {	
+		let arr2 = []
+		arr2.push(arr)
+		return arr2.includes( el )
 	}
 
 	/*Adds the new 5 numbers chosen by the user to the

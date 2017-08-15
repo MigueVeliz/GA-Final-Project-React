@@ -258,11 +258,29 @@ p {
 ********************************************
 *******************************************/
 
+.choose-five {
+  background-color: #27233A;
+  color: #F2DDA4;
+  padding: 12px;
+  font-size: 15px;
+  margin: 0;
+}
+
+.previous-numbers-text-take5 {
+  background-color: #27233A;
+  color: #F2DDA4;
+  padding: 12px;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 0;
+}
+
 .take5-winning-numbers {
-  background-color: #4C2C72;
+  background-color: #222A68;
   width: 100vw;
-  padding: 10px 0px 15px;
-  color: yellow;
+  padding: 10px 1px;
+  font-size: 12px;
+  color: #20FC8F;
 }
 
 .take-five {

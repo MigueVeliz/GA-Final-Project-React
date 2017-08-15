@@ -35,7 +35,7 @@ class TakeFive extends Component {
 		.then((responseJson) => {
 			console.log(responseJson)
 
-			this.props.getTake5Data(responseJson);
+			this.props.getTake5Data(responseJson.reverse() );
 		})
 
 		this.getLatestWinningNumbers()
@@ -110,7 +110,6 @@ class TakeFive extends Component {
 
 		console.log("numbers")
 
-		this.props.resetTake5NewNumbersArr()
 
 
 		fetch( this.props.urlReact + "/", {
@@ -129,11 +128,18 @@ class TakeFive extends Component {
 			})
 		})
 		.then((response) => {
+			console.log('&&&&&&    ' + JSON.stringify(response))
 			return response.json()
 		})
 		.then((body) => {
-			console.log(body)
+			this.props.updateOldTake5Numbers( JSON.stringify(body) )
+			console.log('~~~~~~~~~~~~~' + JSON.stringify(body))
 		});
+
+		// this.props.updateOldTake5Numbers()
+		// this.props.resetTake5NewNumbersArr()
+
+
 
 	}
 
@@ -158,7 +164,10 @@ class TakeFive extends Component {
 	by the user*/
 	deleteNumbers(id) {
 
-		console.log("deleting numbers widh ID:" + id ) 
+		console.log("deleting numbers widh ID:" + id )
+
+		this.props.deleteTake5Numbers(id)
+
 
 	    fetch( this.props.urlReact + "/" + id, {
 	        method: 'DELETE',
@@ -170,7 +179,7 @@ class TakeFive extends Component {
 	showWinningNumbers() {
 		let draw_date = this.props.take5LatestWinningNumbers.draw_date
 
-		console.log( draw_date ) 
+		// console.log( draw_date ) 
 		//draw_date = draw_date.slice(0, draw_date.lastIndexOf("T"))
 
 		return (
@@ -194,6 +203,8 @@ class TakeFive extends Component {
 
 				{ this.showWinningNumbers() }
 
+				<h3 className = "choose-five">Choose 5 Different Numbers</h3>
+
 				<div className = "new-numbers">
 					{ this.chooseNewNumbers()}
 				</div>
@@ -202,7 +213,7 @@ class TakeFive extends Component {
 					{ this.submitButton() }
 				</div>
 
-				<p className = "previous-numbers-text">Your previous Numbers</p>
+				<p className = "previous-numbers-text-take5">Your previous Numbers</p>
 				<div  className = "old-numbers">
 					{ this.displayData() }
 				</div>
