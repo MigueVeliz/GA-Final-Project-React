@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import GoHome from './GoHome'
+// import GoHome from './GoHome'
 import Navigation from './Navigation'
 
 
@@ -250,7 +250,11 @@ class QuickDraw extends Component {
 			<div>
           		<Navigation getGameMode = { this.props.getGameMode } logout = { this.props.logout } user = { this.props.user }/>
 			
-				<GoHome getGameMode = { this.props.getGameMode } />
+				<div className = "instructions instructions-quick-draw spots-instrctions">Spots</div>
+				<div className = "instructions numbers-chosen">Numbers Selected</div>
+				<div className = "instructions how-much-per-draw-instructions">How Much Per Draw</div>
+				<div className = "instructions quick-draw-extra-instructions">Quick Draw Extra</div>
+				<div className = "instructions consecutive-draws-instructions">Consecutive Draws</div>
 
 				<div className = "new-quick-draw-numbers">
 					{ this.chooseNewQuickDrawNumbers() }

@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 // appToken = cQbEkDeWdMcqRnK5O2Hmh5fFI
-import GoHome from './GoHome'
+// import GoHome from './GoHome'
 import Navigation from './Navigation'
 // import Take5LatestWinningNumbers from './Take5LatestWinningNumbers'
 
 class TakeFive extends Component {
 
 	getLatestWinningNumbers() {
-		
-		fetch( "https://data.ny.gov/resource/hh4x-xmbw.json?draw_date=2017-08-13")
+
+		// https://data.ny.gov/resource/hh4x-xmbw.json?$order=draw_date DESC&$limit=1
+
+		fetch( "https://data.ny.gov/resource/hh4x-xmbw.json?$order=draw_date DESC&$limit=1")
 		.then((response) => {
 			return response.json()
 		})
@@ -176,17 +178,21 @@ class TakeFive extends Component {
 
 	}//end of deleteNumbers
 
+	
+	// Shows the current winning numbers
 	showWinningNumbers() {
-		let draw_date = this.props.take5LatestWinningNumbers.draw_date
 
-		// console.log( draw_date ) 
-		//draw_date = draw_date.slice(0, draw_date.lastIndexOf("T"))
+		let newDate = new Date( this.props.take5LatestWinningNumbers.draw_date );
+
+		newDate = newDate.toString().slice(0,15)
+
+		console.log( newDate )
 
 		return (
 			<div className = "take5-winning-numbers">
 				<h2>Latest Winning Numbers: </h2>
-				<p> { this.props.take5LatestWinningNumbers.winning_numbers } </p>
-				<p> { draw_date } </p>
+				<p className = "winning-numbers"> { this.props.take5LatestWinningNumbers.winning_numbers } </p>
+				<p> { newDate } </p>
 
 			</div>
 		)

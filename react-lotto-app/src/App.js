@@ -36,6 +36,7 @@ class App extends Component {
       quickDrawNewNumbers: [], // * Quick Draw - Third Game
       pick10: [], // ************** Pick 10- Third Game
       pick10NewNumbers: [], // **** Pick 10- Third Game
+      pick10LatestWinningNumbers: [],
       win4: [], // ************** Win 4- Fourth Game
       win4NewNumbers: [] // **** Win 4- Fourth Game
 
@@ -190,7 +191,7 @@ class App extends Component {
         getNewNumbers = { this.newNumbersNumbers.bind(this) }
         newNumbers = { this.state.numbersNewNumbers }
         deleteNumbersNumbers = { this.deleteNumbersNumbers.bind(this) }
-
+        updateOldNumbersNumbers = {  this.updateOldNumbersNumbers.bind(this)  }
       />
     }
     else if (gameMode === "QuickDraw") {
@@ -212,6 +213,8 @@ class App extends Component {
         urlReact = { this.state.urlReact }
         user = { this.state.user }
         logout = { this.logout.bind(this) }
+        getPick10LatestWinningNumbers = { this.getPick10LatestWinningNumbers.bind(this) }
+        pick10LatestWinningNumbers = { this.state.pick10LatestWinningNumbers }
         getGameMode = { this.getGameMode.bind(this) }
         getPick10Data = { this.getPick10Data.bind(this) }
         pick10Data = { this.state.pick10 }
@@ -272,7 +275,57 @@ class App extends Component {
 
     this.resetTake5NewNumbersArr()
 
-  }
+  }//updateOldTake5Numbers
+
+
+  updateOldNumbersNumbers( id ) {
+
+    id = parseInt(id.match(/\d+/)[0])
+
+    console.log("Return ID: " + typeof id )
+
+    let currentNumbers = this.state.numbers
+
+    //console.log("Current takeFive Arr: " + this.state.takeFive[0].id )
+
+    let newNumbers = this.state.numbersNewNumbers
+
+    console.log("Current takeFiveNumbers Arr: " + this.state.numbersNewNumbers.length )
+
+
+    let arr = {
+        user_id: id,
+        first_digit: newNumbers[0],
+        second_digit: newNumbers[1],
+        third_digit: newNumbers[2],
+        wager_type: newNumbers[3],
+        amount_per_wager: newNumbers[4],
+        draw_time: newNumbers[5],
+        number_of_tickets: newNumbers[6],
+        number_of_days: newNumbers[7]
+    }
+
+    currentNumbers.push( arr )
+
+    console.log("Pushed Arra: " + currentNumbers[0])
+
+    currentNumbers.reverse()
+
+    this.setState({ 
+      numbers: currentNumbers
+    })
+
+    this.resetNumbersNewNumbersArr()
+
+
+
+
+  }//updateOldNumbersNumbers
+
+
+
+
+
 
   deleteTake5Numbers( id ) {
     this.setState({
@@ -310,6 +363,15 @@ class App extends Component {
 
     this.setState({ 
       take5LatestWinningNumbers: {...numbers}
+    })
+  }
+
+  getPick10LatestWinningNumbers( numbers ) {
+
+    console.log( numbers )
+
+    this.setState({ 
+      pick10LatestWinningNumbers: {...numbers}
     })
   }
 
@@ -360,9 +422,16 @@ class App extends Component {
 
   resetTake5NewNumbersArr() {
     // let emptyArr = []
-
     this.setState({ 
       takeFiveNumbers: []
+    })
+
+  }
+
+  resetNumbersNewNumbersArr() {
+    // let emptyArr = []
+    this.setState({ 
+      numbersNewNumbers: []
     })
 
   }

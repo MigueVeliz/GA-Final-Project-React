@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 
-import GoHome from './GoHome'
+// import GoHome from './GoHome'
 import Navigation from './Navigation'
 
 
 class Numbers extends Component {
+
+
+
+
 
 	/*game information is loaded when
 	this component is mounted*/
@@ -19,7 +23,7 @@ class Numbers extends Component {
 		.then((responseJson) => {
 			console.log(responseJson)
 
-			this.props.getNumbersData(responseJson);
+			this.props.getNumbersData(responseJson.reverse() );
 		})
 	}//end of componentDidMount
 
@@ -219,9 +223,11 @@ class Numbers extends Component {
 			})
 		})
 		.then((response) => {
+			console.log('&&&&&&    ' + JSON.stringify(response))
 			return response.json()
 		})
 		.then((body) => {
+			this.props.updateOldNumbersNumbers( JSON.stringify(body) )
 			console.log(body)
 		});
 
@@ -248,7 +254,12 @@ class Numbers extends Component {
 			<div >
           		<Navigation getGameMode = { this.props.getGameMode } logout = { this.props.logout } user = { this.props.user }/>
 
-				<GoHome getGameMode = { this.props.getGameMode } />
+				<div className = "instructions-numbers instructions-numbers-padding digits-3-instrctions">3 Digits</div>
+				<div className = "instructions-numbers wager-type-instructions">Wager Type</div>
+				<div className = "instructions-numbers amount-per-wager-instructions">Amount Per Wager</div>
+				<div className = "instructions-numbers draw-time-instructions">Draw Time</div>
+				<div className = "instructions-numbers number-of-tickets-instructions">Number Of Tickets</div>
+				<div className = "instructions-numbers number-of-days-instructions">Number Of Days</div>
 
 				<div className = "numbers-new-numbers">
 					{ this.chooseNewNumbersV2()}

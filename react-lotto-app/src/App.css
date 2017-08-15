@@ -283,6 +283,11 @@ p {
   color: #20FC8F;
 }
 
+.winning-numbers {
+  font-size: 20px;
+  color: yellow;
+}
+
 .take-five {
   width: 100vw;
   /*height: 83vh;*/
@@ -388,15 +393,37 @@ p {
 ********************************************
 *******************************************/
 
+
+
+
+.instructions-numbers { 
+  padding: 4px 0px; 
+  display: inline-block;
+  color: white;
+  font-size: 14px;
+ }
+
+ .instructions-numbers-padding {
+  margin-top: 30px;
+}
+
+
+.digits-3-instrctions { background-color: #1D7874; width: 15vw; }
+.wager-type-instructions { background-color: #474973; width: 25vw; }
+.amount-per-wager-instructions { background-color: #0D0C1D; width: 35vw; }
+.draw-time-instructions { background-color: #F0E100; color: black; width: 25vw; }
+.number-of-tickets-instructions { background-color: #FF7700; width: 50vw; }
+.number-of-days-instructions { background-color: #8CC084; width: 50vw; }
+
 .numbers-new-numbers {
   width: 100vw;
-  background-color: #CA3C25;
+  background-color: #222A68;
   padding: 2px 0px;
 }
 
 .first-digit-styles {
   width: 6%;
-  background-color: #443742;
+  background-color: #1D7874;
   padding: 4px;
   border-radius: 100%;
   display: inline-block;
@@ -451,7 +478,7 @@ p {
 
 .number-of-days-styles {
   width: 7%;
-  background-color: #B19994;
+  background-color: #8CC084;
   padding: 9px 2px;
   border-radius: 100%;
   display: inline-block;
@@ -508,11 +535,11 @@ p {
   margin: 1px 3px;
 }
 
-.wager_type { background-color: yellow; font-size: 12px; width: 12%; color: black; }
+.wager_type { background-color: #474973; color: white; font-size: 12px; width: 12%; }
 .amount_per_wager { background-color: #29335C }
-.draw_time { background-color: #E4572E; font-size: 12px; }
-.number_of_tickets { background-color: #F3A712 }
-.number_of_days { background-color: #071E22 }
+.draw_time { background-color: #F0E100; color: black; font-size: 12px; }
+.number_of_tickets { background-color: #FF7700 }
+.number_of_days { background-color: #8CC084; color: black; }
 
 .numbers-delete-button {
   background-color: #F0C808;
@@ -527,6 +554,26 @@ p {
 *********** Q U I C K   D R A W ************
 ********************************************
 *******************************************/
+
+
+.instructions {
+  /*width: 60vw;*/
+  padding: 4px 0px; 
+  display: inline-block;
+  color: white;
+}
+
+.instructions-quick-draw {
+  margin-top: 30px;
+}
+
+
+
+.spots-instrctions { background-color: #E71D36; width: 15vw; }
+.numbers-chosen { background-color: #A80874; width: 40vw; }
+.how-much-per-draw-instructions { background-color: #0CA4A5; width: 45vw; }
+.quick-draw-extra-instructions { background-color: #5EF38C; color: black; width: 50vw; }
+.consecutive-draws-instructions { background-color: #691E06; width: 50vw; }
 
 .old-quick-draw-container {
   width: 100vw;
@@ -631,6 +678,39 @@ p {
 *************** P I C K  10 ****************
 ********************************************
 *******************************************/
+
+.instructions {
+  /*width: 60vw;*/
+  padding: 4px 0px; 
+  display: inline-block;
+}
+
+.choose-10-numbers {
+  width: 60vw;
+  background-color: tomato;
+  color: white;
+}
+
+.number-of-days {
+  width: 40vw;
+  background-color: #17BEBB;
+  color: white;
+}
+
+.pick10-winning-numbers {
+  background-color: #222A68;
+  width: 100vw;
+  padding: 10px 0px;
+  font-size: 12px;
+  color: #20FC8F;
+}
+
+.winning-numbers-pick10 {
+  font-size: 17px;
+  padding: 0px 60px;
+  color: yellow;
+  margin-bottom: 10px;
+}
 
 .new-pick10-numbers-container {
   width: 100vw;

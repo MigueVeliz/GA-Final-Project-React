@@ -1,10 +1,26 @@
 import React, { Component } from 'react'
 
-import GoHome from './GoHome'
+// import GoHome from './GoHome'
 import Navigation from './Navigation'
 
 
 class Pick10 extends Component {
+
+
+	getLatestWinningNumbers() {
+		
+		fetch( "https://data.ny.gov/resource/r9pz-ziyb.json?$order=draw_date DESC&$limit=1")
+		.then((response) => {
+			return response.json()
+		})
+		.then((responseJson) => {
+			console.log(responseJson[0].draw_date)
+			console.log(responseJson[0].winning_numbers)
+
+			this.props.getPick10LatestWinningNumbers(responseJson[0]);
+		})
+
+	}
 
 	/* Game information is loaded when
 	this component is mounted */
@@ -21,6 +37,8 @@ class Pick10 extends Component {
 
 			this.props.getPick10Data(responseJson);
 		})
+
+		this.getLatestWinningNumbers()
 	}//end of componentDidMount\
 
 
@@ -180,6 +198,30 @@ class Pick10 extends Component {
 
 	}
 
+	// Shows the current winning numbers
+	showWinningNumbers() {
+
+		let winningNumbers = this.props.pick10LatestWinningNumbers.winning_numbers
+		let newDate = new Date( this.props.pick10LatestWinningNumbers.draw_date );
+
+		newDate = newDate.toString().slice(0,15)
+
+
+		console.log( winningNumbers )
+
+		 // winningNumbers.toString().slice(0,12)
+
+		return (
+			<div className = "pick10-winning-numbers">
+				<h2>Latest Winning Numbers: </h2>
+				<p className = "winning-numbers-pick10"> { winningNumbers } </p>
+				<p> { newDate } </p>
+
+			</div>
+		)
+
+	}
+
 
 
 	render() {
@@ -187,10 +229,14 @@ class Pick10 extends Component {
 			<div>
           		<Navigation getGameMode = { this.props.getGameMode } logout = { this.props.logout } user = { this.props.user }/>
 			
-				<GoHome getGameMode = { this.props.getGameMode } />
+				{ this.showWinningNumbers() }
 
 
+				<div className = "instructions choose-10-numbers">Choose 10 Numbers</div>
+				<div className = "instructions number-of-days">Number Of Days</div>
+				
 				<div className = "new-pick10-numbers-container">
+			
 					{ this.chooseNewPick10Numbers() }
 				</div>
 
